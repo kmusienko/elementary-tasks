@@ -30,7 +30,7 @@ public class App {
     }
 
     public static void validateAndPrint(String[] args) {
-        if (args.length == 0) {
+        if (args.length != 2) {
             System.out.println("You have to write 2 parameters: 1 - height, 2 - width of chess board.");
         } else {
             try {

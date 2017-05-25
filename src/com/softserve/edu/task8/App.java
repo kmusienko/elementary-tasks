@@ -5,7 +5,7 @@ package com.softserve.edu.task8;
  */
 public class App {
     public static void main(String[] args) {
-        if (args.length==0) {
+        if (args.length !=2) {
             System.out.println("You need to enter 2 integer parameters. ");
         } else {
             try {

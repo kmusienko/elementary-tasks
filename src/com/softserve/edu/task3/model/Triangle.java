@@ -1,5 +1,7 @@
 package com.softserve.edu.task3.model;
 
+import com.softserve.edu.task3.exceptions.NotValidTriangleException;
+
 /**
  * Created by Kostya on 23.05.2017.
  */
@@ -10,11 +12,23 @@ public class Triangle {
     private double bSide;
     private double cSide;
 
-    public Triangle(String name, double aSide, double bSide, double cSide) {
-        this.name = name;
-        this.aSide = aSide;
-        this.bSide = bSide;
-        this.cSide = cSide;
+    public Triangle(String name, double aSide, double bSide, double cSide) throws NotValidTriangleException {
+        if(isValidTriangle(aSide, bSide, cSide)) {
+            this.name = name;
+            this.aSide = aSide;
+            this.bSide = bSide;
+            this.cSide = cSide;
+        } else {
+            throw new NotValidTriangleException();
+        }
+    }
+    public boolean isValidTriangle(double aSide, double bSide, double cSide) {
+        if (aSide <= 0 || bSide <= 0 || cSide <= 0) {
+            return false;
+        } else if (((aSide + bSide) <= cSide) || ((aSide + cSide) <= bSide) || ((bSide + cSide) <= aSide)) {
+            return false;
+        }
+        return true;
     }
 
     public double getSquare() {
@@ -53,5 +67,6 @@ public class Triangle {
     public void setcSide(double cSide) {
         this.cSide = cSide;
     }
+
 
 }

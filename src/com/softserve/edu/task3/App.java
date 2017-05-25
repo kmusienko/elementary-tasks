@@ -1,5 +1,6 @@
 package com.softserve.edu.task3;
 
+import com.softserve.edu.task3.exceptions.NotValidTriangleException;
 import com.softserve.edu.task3.model.Triangle;
 import com.softserve.edu.task3.services.TriangleService;
 import com.softserve.edu.task3.services.TriangleServiceImpl;
@@ -21,6 +22,8 @@ public class App {
             triangleService.printTriangles(triangles);
         } catch (NumberFormatException e) {
             System.out.println("Incorrect input! " + e.getMessage());
+        } catch (NotValidTriangleException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
