@@ -3,23 +3,25 @@ package com.softserve.edu.task3.services;
 import com.softserve.edu.task3.exceptions.NotValidTriangleException;
 import com.softserve.edu.task3.model.Triangle;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Created by Kostya on 24.05.2017.
  */
 public class TriangleServiceImpl implements TriangleService {
+    /**
+     * initializes input.
+     * @return list of triangles which has been entered
+     */
     @Override
     public List<Triangle> initialize() {
         Scanner scanner = new Scanner(System.in);
         String answer = "";
         List<Triangle> triangles = new ArrayList<>();
         do {
-            System.out.println("Please, enter name and sides of triangle. Format: <Name>,<1-st side>,<2-nd side>," +
-                    "<3-rd side>");
+            System.out.println("Please, enter name and sides of triangle."
+                    + " Format: <Name>,<1-st side>,<2-nd side>,"
+                    + "<3-rd side>");
             String textTriangle = scanner.nextLine();
             String[] partsOfTriangle = textTriangle.split(",");
             String name = partsOfTriangle[0];
@@ -37,25 +39,52 @@ public class TriangleServiceImpl implements TriangleService {
         return triangles;
     }
 
+    /**
+     * sorts triangles by square.
+     * @param triangles list of triangle need to sort
+     */
+
     public void sortTriangles(List<Triangle> triangles) {
-        Collections.sort(triangles, (triangle1, triangle2) -> {
-            double doubleResult = triangle2.getSquare() - triangle1.getSquare();
-            if (doubleResult > 0) return 1;
-            else if (doubleResult == 0) return 0;
-            else return -1;
+//        Collections.sort(triangles, (triangle1, triangle2) -> {
+//            double doubleResult = triangle2.getSquare()
+//            - triangle1.getSquare();
+//            if (doubleResult > 0) return 1;
+//            else if (doubleResult == 0) return 0;
+//            else return -1;
+//        });
+        Collections.sort(triangles, new Comparator<Triangle>() {
+            @Override
+            public int compare(Triangle triangle1, Triangle triangle2) {
+                double doubleResult = triangle2.getSquare()
+                        - triangle1.getSquare();
+                final double EPS = 0.0001;
+                if (doubleResult > EPS) {
+                    return 1;
+                } else if (doubleResult < -EPS) {
+                    return -1;
+                } else {
+                    return 0;
+                }
+            }
         });
     }
 
     public void printTriangles(List<Triangle> triangles) {
         int i = 1;
         for (Triangle triangle : triangles) {
-            System.out.println(i + ". [Triangle " + triangle.getName() + "]: Square = " + String.format("%.2f", triangle.getSquare()) + ". Sides: " + triangle.getaSide() + " cm, " + triangle.getbSide() + " cm, " + triangle.getcSide() + " cm.");
+            System.out.println(i + ". [Triangle " + triangle.getName()
+                    + "]: Square = "
+                    + String.format("%.2f", triangle.getSquare())
+                    + ". Sides: " + triangle.getaSide() + " cm, "
+                    + triangle.getbSide() + " cm, " + triangle.getcSide()
+                    + " cm.");
             i++;
         }
     }
 
     public boolean isContinue(String answer) {
-        if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
+        if (answer.equalsIgnoreCase("yes")
+                || answer.equalsIgnoreCase("y")) {
             return true;
         }
         return false;
