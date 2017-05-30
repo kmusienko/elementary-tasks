@@ -17,12 +17,14 @@ public class App {
     public static void main(String[] args) {
         run(args);
     }
+
     public static void run(String[] args) {
         if (args.length == 2) {
             Path path = Paths.get(args[0]);
             String textToFind = args[1];
             try {
-                System.out.println("Number of coincidences = " + getNumberOfCoinc(path, textToFind));
+                System.out.println("Number of coincidences = " +
+                                           getNumberOfCoinc(path, textToFind));
             } catch (IOException e) {
                 e.getMessage();
             }
@@ -40,7 +42,8 @@ public class App {
         }
     }
 
-    public static int getNumberOfCoinc(Path path, String text) throws IOException {
+    public static int getNumberOfCoinc(Path path, String text)
+            throws IOException {
         List<String> textList = Files.readAllLines(path);
         int counter = 0;
         for (String line : textList) {
@@ -53,7 +56,8 @@ public class App {
         return counter;
     }
 
-    public static void replaceText(Path path, String textToFind, String textToReplace) throws IOException {
+    public static void replaceText(Path path, String textToFind,
+                                   String textToReplace) throws IOException {
         List<String> textList = Files.readAllLines(path);
         StringBuilder textToWrite = new StringBuilder();
         for (String s : textList) {

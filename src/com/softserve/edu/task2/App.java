@@ -8,7 +8,11 @@ import java.util.Scanner;
  */
 public class App {
     public static void main(String[] args) {
-        String answer = "";
+      run();
+    }
+
+    public static void run() {
+        String answer;
         Scanner scanner = new Scanner(System.in);
         do {
             try {
@@ -17,18 +21,14 @@ public class App {
                 double a = scanner.nextDouble();
                 System.out.print("b =  ");
                 double b = scanner.nextDouble();
-                System.out.println("Envelop #2. Please, write size (c,d):");
-                System.out.print("c = ");
+                Envelop envelop1 = new Envelop(a, b);
+                System.out.println("Envelop #2. Please, write size (a,b):");
+                System.out.print("a = ");
                 double c = scanner.nextDouble();
-                System.out.print("d = ");
+                System.out.print("b = ");
                 double d = scanner.nextDouble();
-                if (c < a && d < b) {
-                    System.out.println("You can put Envelop #2 in Envelop #1");
-                } else if (a < c && b < d) {
-                    System.out.println("You can put Envelop #1 in Envelop #2");
-                } else {
-                    System.out.println("You can't put one envelop to another.");
-                }
+                Envelop envelop2 = new Envelop(c, d);
+                printEnvelopsInfo(envelop1, envelop2);
             } catch (InputMismatchException e) {
                 System.out.println("Incorrect input!");
             }
@@ -38,8 +38,21 @@ public class App {
         } while (isContinue(answer));
     }
 
+    public static void printEnvelopsInfo(Envelop envelop1, Envelop envelop2) {
+        if (envelop2.getaSide() < envelop1.getaSide()
+                && envelop2.getbSide() < envelop2.getbSide()) {
+            System.out.println("You can put Envelop #2 in Envelop #1");
+        } else if (envelop1.getaSide() < envelop2.getaSide() &&
+                envelop1.getbSide() < envelop2.getbSide()) {
+            System.out.println("You can put Envelop #1 in Envelop #2");
+        } else {
+            System.out.println("You can't put one envelop to another.");
+        }
+    }
+
     public static boolean isContinue(String answer) {
-        if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
+        if (answer.equalsIgnoreCase("yes")
+                || answer.equalsIgnoreCase("y")) {
             return true;
         }
         return false;
