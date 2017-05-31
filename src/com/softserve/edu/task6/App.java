@@ -61,17 +61,21 @@ public class App {
             System.out.println("Please, write ticket's number");
             try {
                 int ticketNumber = scanner.nextInt();
+                if (!isValidTicket(ticketNumber)) {
+                    throw new IllegalArgumentException("Incorrect input!");
+                }
                 Ticket ticket = new Ticket(String.valueOf(ticketNumber));
                 tickets.add(ticket);
             } catch (InputMismatchException e) {
                 System.out.println("Incorrect input!");
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             } finally {
                 scanner.nextLine();
             }
             System.out.println("Do you want to add one more ticket?");
             answer = scanner.nextLine();
         } while (isContinue(answer));
-
         return tickets;
     }
 
@@ -86,5 +90,11 @@ public class App {
             return true;
         }
         return false;
+    }
+    public static boolean isValidTicket(int ticketNumber) {
+        if (String.valueOf(ticketNumber).length() != 6 || String.valueOf(ticketNumber).charAt(0) == '-') {
+            return false;
+        }
+        return true;
     }
 }
