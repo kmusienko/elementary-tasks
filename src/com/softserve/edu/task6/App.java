@@ -19,6 +19,9 @@ public class App {
         run();
     }
 
+    /**
+     * Runs the application.
+     */
     public static void run() {
         List<Ticket> tickets = initializeTickets();
         TicketService ticketService = new TicketService();
@@ -33,7 +36,7 @@ public class App {
                 numberOfLuckyTickets = ticketService.getAmountOfMoscowLuckyTickets(tickets);
                 System.out.println("Number of lucky tickets (Moscow) = " + numberOfLuckyTickets);
             } else if (line.equals("Piter")) {
-               numberOfLuckyTickets  = ticketService.getAmountOfPiterLuckyTickets(tickets);
+                numberOfLuckyTickets = ticketService.getAmountOfPiterLuckyTickets(tickets);
                 System.out.println("Number of lucky tickets (Piter) = " + numberOfLuckyTickets);
             } else {
                 System.out.println("Incorrect file's text.");
@@ -45,8 +48,13 @@ public class App {
         }
     }
 
+    /**
+     * Initializes input tickets.
+     *
+     * @return list of tickets
+     */
     public static List<Ticket> initializeTickets() {
-        String answer="";
+        String answer = "";
         List<Ticket> tickets = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
         do {
@@ -57,8 +65,7 @@ public class App {
                 tickets.add(ticket);
             } catch (InputMismatchException e) {
                 System.out.println("Incorrect input!");
-            }
-            finally {
+            } finally {
                 scanner.nextLine();
             }
             System.out.println("Do you want to add one more ticket?");
@@ -68,6 +75,12 @@ public class App {
         return tickets;
     }
 
+    /**
+     * Checks if answer is positive or negative.
+     *
+     * @param answer - user's answer.
+     * @return boolean value (true or false).
+     */
     public static boolean isContinue(String answer) {
         if (answer.equalsIgnoreCase("yes") || answer.equalsIgnoreCase("y")) {
             return true;
