@@ -24,6 +24,14 @@ public class Triangle {
         }
     }
 
+    /**
+     * Checks if triangle is valid.
+     * @param aSide - first triangle's side.
+     * @param bSide - second triangle's side.
+     * @param cSide - third triangle's side.
+     * @return - boolean value(true or false)
+     */
+
     public boolean isValidTriangle(double aSide, double bSide, double cSide) {
         if (aSide <= 0 || bSide <= 0 || cSide <= 0) {
             return false;
@@ -33,6 +41,11 @@ public class Triangle {
         }
         return true;
     }
+
+    /**
+     * Gets square of triangle by Heron's formula.
+     * @return square of triangle.
+     */
 
     public double getSquare() {
         double p = (aSide + bSide + cSide) / 2;

@@ -8,6 +8,11 @@ public class App {
         validateAndPrint(args);
     }
 
+    /**
+     * prints chessboard
+     * @param height - height of chessboard
+     * @param width - width of chessboard
+     */
     public static void printChessBoard(int height, int width) {
         for (int i = 1; i <= height; i++) {
             for (int j = 1; j <= width; j++) {
@@ -29,11 +34,14 @@ public class App {
         }
     }
 
+    /**
+     * validates and prints chessboard
+     * @param args - height and width values which has been entered by user.
+     */
     public static void validateAndPrint(String[] args) {
         if (args.length != 2) {
-            System.out.println(
-                    "You have to write 2 parameters: 1 - height,"
-                            + "2 - width of chess board.");
+            System.out.println("You have to write 2 parameters: 1 - height," +
+                                       "2 - width of chess board.");
         } else {
             try {
                 int height = Integer.parseInt(args[0]);

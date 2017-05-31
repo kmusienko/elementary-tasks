@@ -41,9 +41,8 @@ public class TriangleServiceImpl implements TriangleService {
 
     /**
      * sorts triangles by square.
-     * @param triangles list of triangle need to sort
+     * @param triangles - list of triangle need to sort
      */
-
     public void sortTriangles(List<Triangle> triangles) {
 //        Collections.sort(triangles, (triangle1, triangle2) -> {
 //            double doubleResult = triangle2.getSquare()
@@ -69,6 +68,10 @@ public class TriangleServiceImpl implements TriangleService {
         });
     }
 
+    /**
+     * prints triangles.
+     * @param triangles - list of triangles which will be printed.
+     */
     public void printTriangles(List<Triangle> triangles) {
         int i = 1;
         for (Triangle triangle : triangles) {
@@ -82,6 +85,11 @@ public class TriangleServiceImpl implements TriangleService {
         }
     }
 
+    /**
+     * Checks if answer is positive or negative.
+     * @param answer - user's answer
+     * @return boolean value(true or false)
+     */
     public boolean isContinue(String answer) {
         if (answer.equalsIgnoreCase("yes")
                 || answer.equalsIgnoreCase("y")) {

@@ -17,6 +17,11 @@ public class App {
             }
         }
     }
+
+    /**
+     * Prints integers in case (i*i < n)
+     * @param n - user's input number.
+     */
     public static void printIntegers(int n) {
         for(int i=1;i*i<n;i++) {
             System.out.println(i);

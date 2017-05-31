@@ -1,22 +1,44 @@
 package com.softserve.edu.task8;
 
+import java.nio.channels.IllegalSelectorException;
+
 /**
  * Created by Kostya on 23.05.2017.
  */
 public class App {
     public static void main(String[] args) {
-        if (args.length !=2) {
+        run(args);
+    }
+
+    /**
+     * runs the application.
+     * @param args - numbers a and b.
+     */
+    public static void run(String[] args) {
+        if (args.length != 2) {
             System.out.println("You need to enter 2 integer parameters. ");
         } else {
             try {
                 int a = Integer.parseInt(args[0]);
                 int b = Integer.parseInt(args[1]);
+                if (a < b) {
+                    throw new IllegalArgumentException(
+                            "b parameter must be " + "bigger than a");
+                }
                 printFiboNumbers(a, b);
             } catch (NumberFormatException e) {
                 System.out.println("Incorrect input!");
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
             }
         }
     }
+
+    /**
+     * Prints Fibonacci numbers.
+     * @param a number - first bound
+     * @param b number - second bound
+     */
     public static void printFiboNumbers(int a, int b) {
         int f0 = 1;
         int f1 = 1;

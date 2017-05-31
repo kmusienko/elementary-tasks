@@ -18,6 +18,10 @@ public class App {
         run(args);
     }
 
+    /**
+     * runs the application
+     * @param args - user's input (path and text to find or replace)
+     */
     public static void run(String[] args) {
         if (args.length == 2) {
             Path path = Paths.get(args[0]);
@@ -42,6 +46,13 @@ public class App {
         }
     }
 
+    /**
+     * Gets number of coincidence.
+     * @param path - file path.
+     * @param text - text to find.
+     * @return number of coincidence.
+     * @throws IOException - IOException.
+     */
     public static int getNumberOfCoinc(Path path, String text)
             throws IOException {
         List<String> textList = Files.readAllLines(path);
@@ -56,6 +67,13 @@ public class App {
         return counter;
     }
 
+    /**
+     * Replaces text
+     * @param path - file path.
+     * @param textToFind - text to find.
+     * @param textToReplace - text to replace.
+     * @throws IOException - IOException.
+     */
     public static void replaceText(Path path, String textToFind,
                                    String textToReplace) throws IOException {
         List<String> textList = Files.readAllLines(path);

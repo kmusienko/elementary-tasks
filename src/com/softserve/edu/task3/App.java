@@ -14,6 +14,10 @@ public class App {
     public static void main(String[] args) {
         run();
     }
+
+    /**
+     * runs the application
+     */
     public static void run() {
         TriangleService triangleService = new TriangleServiceImpl();
         try {

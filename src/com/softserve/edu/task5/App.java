@@ -18,6 +18,11 @@ public class App {
         }
     }
 
+    /**
+     * Gets transformed number into words.
+     * @param number - number which user has entered.
+     * @return transformed number.
+     */
     public static String getWordTransformedNumber(long number) {
         RuleBasedNumberFormat nf = new RuleBasedNumberFormat(
                 Locale.forLanguageTag("ru"),

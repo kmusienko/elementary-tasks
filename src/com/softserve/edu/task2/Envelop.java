@@ -23,6 +23,12 @@ public class Envelop {
         return bSide;
     }
 
+    /**
+     * Checks if envelop is valid.
+     * @param aSide - one side of envelop
+     * @param bSide - other side of envelop
+     * @return boolean value (true or false)
+     */
     public boolean isValidEnvelop(double aSide, double bSide) {
         if (aSide <= 0 || bSide <= 0) {
             return false;

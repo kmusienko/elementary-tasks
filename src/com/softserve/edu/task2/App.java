@@ -11,6 +11,9 @@ public class App {
       run();
     }
 
+    /**
+     * runs the application.
+     */
     public static void run() {
         String answer;
         Scanner scanner = new Scanner(System.in);
@@ -38,6 +41,11 @@ public class App {
         } while (isContinue(answer));
     }
 
+    /**
+     * Prints envelop's info.
+     * @param envelop1 - first envelop
+     * @param envelop2 - second envelop
+     */
     public static void printEnvelopsInfo(Envelop envelop1, Envelop envelop2) {
         if (envelop2.getaSide() < envelop1.getaSide()
                 && envelop2.getbSide() < envelop2.getbSide()) {
@@ -50,6 +58,11 @@ public class App {
         }
     }
 
+    /**
+     * Checks if answer is positive or negative.
+     * @param answer - user's answer.
+     * @return boolean value (true or false).
+     */
     public static boolean isContinue(String answer) {
         if (answer.equalsIgnoreCase("yes")
                 || answer.equalsIgnoreCase("y")) {
