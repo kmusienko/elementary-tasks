@@ -24,10 +24,10 @@ public class App {
      * @return transformed number.
      */
     public static String getWordTransformedNumber(long number) {
-        RuleBasedNumberFormat nf = new RuleBasedNumberFormat(
+        RuleBasedNumberFormat numberFormat = new RuleBasedNumberFormat(
                 Locale.forLanguageTag("ru"),
                 RuleBasedNumberFormat.SPELLOUT);
-        return nf.format(number);
+        return numberFormat.format(number);
     }
 
 }
