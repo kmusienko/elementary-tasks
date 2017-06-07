@@ -9,9 +9,6 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by adminaccount on 6/7/2017.
- */
 public class TriangleServiceTest {
     @Test
     public void sortTriangles_ListOfTriangles_sortedTrianglesReturned() {

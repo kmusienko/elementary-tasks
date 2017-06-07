@@ -9,9 +9,6 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Created by adminaccount on 5/31/2017.
- */
 public class App {
     /**
      * Main method.

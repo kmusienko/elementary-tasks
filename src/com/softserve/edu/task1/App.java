@@ -1,8 +1,5 @@
 package com.softserve.edu.task1;
 
-/**
- * Created by Kostya on 22.05.2017.
- */
 public class App {
     public static void main(String[] args) {
         validateAndPrint(args);

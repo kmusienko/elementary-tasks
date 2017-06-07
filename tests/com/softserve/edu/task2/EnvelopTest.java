@@ -2,9 +2,6 @@ package com.softserve.edu.task2;
 
 import org.junit.Test;
 
-/**
- * Created by adminaccount on 6/7/2017.
- */
 public class EnvelopTest {
     @Test (expected = IllegalArgumentException.class)
     public void CreateObject_SidesLessThanZero_ExceptionThrown() {

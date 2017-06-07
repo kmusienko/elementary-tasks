@@ -5,9 +5,6 @@ import com.softserve.edu.task3.model.Triangle;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by adminaccount on 6/7/2017.
- */
 public class TriangleTest {
     @Test (expected = NotValidTriangleException.class)
     public void CreateObject_NegativeSides_ExceptionThrown() {

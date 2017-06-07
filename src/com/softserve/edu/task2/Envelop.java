@@ -1,8 +1,5 @@
 package com.softserve.edu.task2;
 
-/**
- * Created by Kostya on 31.05.2017.
- */
 public class Envelop {
     private double aSide;
     private double bSide;

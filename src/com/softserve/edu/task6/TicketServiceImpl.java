@@ -1,13 +1,9 @@
 package com.softserve.edu.task6;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Created by adminaccount on 6/7/2017.
- */
 public class TicketServiceImpl implements TicketService {
     /**
      * Initializes input tickets.

@@ -1,10 +1,5 @@
 package com.softserve.edu.task8;
 
-import java.nio.channels.IllegalSelectorException;
-
-/**
- * Created by Kostya on 23.05.2017.
- */
 public class App {
     public static void main(String[] args) {
         run(args);

@@ -4,9 +4,6 @@ import com.softserve.edu.task3.exception.NotValidTriangleException;
 
 import java.util.Objects;
 
-/**
- * Created by Kostya on 23.05.2017.
- */
 public class Triangle {
 
     private String name;

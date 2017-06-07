@@ -3,9 +3,6 @@ package com.softserve.edu.task6;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by adminaccount on 6/7/2017.
- */
 public class TicketTest {
     @Test
     public void CreateObject_ValidNumber_TrueRetuned() {

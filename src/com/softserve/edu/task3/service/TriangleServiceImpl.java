@@ -5,9 +5,6 @@ import com.softserve.edu.task3.model.Triangle;
 
 import java.util.*;
 
-/**
- * Created by Kostya on 24.05.2017.
- */
 public class TriangleServiceImpl implements TriangleService {
     /**
      * initializes input.

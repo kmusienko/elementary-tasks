@@ -1,9 +1,5 @@
 package com.softserve.edu.task7;
 
-
-/**
- * Created by Kostya on 23.05.2017.
- */
 public class App {
     public static void main(String[] args) {
         if (args.length==0) {

@@ -2,9 +2,6 @@ package com.softserve.edu.task6;
 
 import java.util.List;
 
-/**
- * Created by adminaccount on 5/31/2017.
- */
 public interface TicketService {
     /**
      * Initializes input tickets.

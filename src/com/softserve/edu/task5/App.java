@@ -3,9 +3,6 @@ package com.softserve.edu.task5;
 import com.ibm.icu.text.RuleBasedNumberFormat;
 import java.util.*;
 
-/**
- * Created by Kostya on 25.05.2017.
- */
 public class App {
     public static void main(String[] args) {
         try {
@@ -25,7 +22,7 @@ public class App {
      */
     public static String getWordTransformedNumber(long number) {
         RuleBasedNumberFormat numberFormat = new RuleBasedNumberFormat(
-                Locale.forLanguageTag("en"),
+                Locale.forLanguageTag("ru"),
                 RuleBasedNumberFormat.SPELLOUT);
         return numberFormat.format(number);
     }

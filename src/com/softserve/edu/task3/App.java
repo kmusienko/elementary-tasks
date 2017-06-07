@@ -7,9 +7,6 @@ import com.softserve.edu.task3.service.TriangleServiceImpl;
 
 import java.util.*;
 
-/**
- * Created by Kostya on 22.05.2017.
- */
 public class App {
     public static void main(String[] args) {
         run();
