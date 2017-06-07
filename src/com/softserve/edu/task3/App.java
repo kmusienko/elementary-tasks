@@ -1,9 +1,9 @@
 package com.softserve.edu.task3;
 
-import com.softserve.edu.task3.exceptions.NotValidTriangleException;
+import com.softserve.edu.task3.exception.NotValidTriangleException;
 import com.softserve.edu.task3.model.Triangle;
-import com.softserve.edu.task3.services.TriangleService;
-import com.softserve.edu.task3.services.TriangleServiceImpl;
+import com.softserve.edu.task3.service.TriangleService;
+import com.softserve.edu.task3.service.TriangleServiceImpl;
 
 import java.util.*;
 

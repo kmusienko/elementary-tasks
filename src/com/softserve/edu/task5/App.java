@@ -25,7 +25,7 @@ public class App {
      */
     public static String getWordTransformedNumber(long number) {
         RuleBasedNumberFormat numberFormat = new RuleBasedNumberFormat(
-                Locale.forLanguageTag("ru"),
+                Locale.forLanguageTag("en"),
                 RuleBasedNumberFormat.SPELLOUT);
         return numberFormat.format(number);
     }

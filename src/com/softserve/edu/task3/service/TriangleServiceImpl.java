@@ -1,6 +1,6 @@
-package com.softserve.edu.task3.services;
+package com.softserve.edu.task3.service;
 
-import com.softserve.edu.task3.exceptions.NotValidTriangleException;
+import com.softserve.edu.task3.exception.NotValidTriangleException;
 import com.softserve.edu.task3.model.Triangle;
 
 import java.util.*;
@@ -11,17 +11,17 @@ import java.util.*;
 public class TriangleServiceImpl implements TriangleService {
     /**
      * initializes input.
+     *
      * @return list of triangles which has been entered
      */
-    @Override
-    public List<Triangle> initialize() {
+    @Override public List<Triangle> initialize() {
         Scanner scanner = new Scanner(System.in);
         String answer = "";
         List<Triangle> triangles = new ArrayList<>();
         do {
             System.out.println("Please, enter name and sides of triangle."
-                    + " Format: <Name>,<1-st side>,<2-nd side>,"
-                    + "<3-rd side>");
+                    + " Format: <Name>,<1-st side>,<2-nd side>," + "<3-rd "
+                    + "side>");
             String textTriangle = scanner.nextLine();
             String[] partsOfTriangle = textTriangle.split(",");
             String name = partsOfTriangle[0];
@@ -41,52 +41,55 @@ public class TriangleServiceImpl implements TriangleService {
 
     /**
      * sorts triangles by square.
+     *
      * @param triangles - list of triangle need to sort
      */
     public void sortTriangles(List<Triangle> triangles) {
-//        Collections.sort(triangles, (triangle1, triangle2) -> {
-//            double doubleResult = triangle2.getSquare()
-//            - triangle1.getSquare();
-//            if (doubleResult > 0) return 1;
-//            else if (doubleResult == 0) return 0;
-//            else return -1;
-//        });
         Collections.sort(triangles, new Comparator<Triangle>() {
             @Override
             public int compare(Triangle triangle1, Triangle triangle2) {
-                double doubleResult = triangle2.getSquare()
-                        - triangle1.getSquare();
-                final double EPS = 0.0001;
-                if (doubleResult > EPS) {
-                    return 1;
-                } else if (doubleResult < -EPS) {
-                    return -1;
-                } else {
-                    return 0;
-                }
+                return Double
+                        .compare(triangle2.getSquare(), triangle1.getSquare());
             }
         });
+//        Collections.sort(triangles, new Comparator<Triangle>() {
+//            @Override
+//            public int compare(Triangle triangle1, Triangle triangle2) {
+//                double doubleResult =
+//                        triangle2.getSquare() - triangle1.getSquare();
+//                final double EPS = 0.0001;
+//                if (doubleResult > EPS) {
+//                    return 1;
+//                } else if (doubleResult < -EPS) {
+//                    return -1;
+//                } else {
+//                    return 0;
+//                }
+//            }
+//        });
     }
 
     /**
      * prints triangles.
+     *
      * @param triangles - list of triangles which will be printed.
      */
     public void printTriangles(List<Triangle> triangles) {
         int i = 1;
         for (Triangle triangle : triangles) {
-            System.out.println(i + ". [Triangle " + triangle.getName()
-                    + "]: Square = "
-                    + String.format("%.2f", triangle.getSquare())
-                    + ". Sides: " + triangle.getaSide() + " cm, "
-                    + triangle.getbSide() + " cm, " + triangle.getcSide()
-                    + " cm.");
+            System.out.println(
+                    i + ". [Triangle " + triangle.getName() + "]: Square = "
+                            + String.format("%.2f", triangle.getSquare())
+                            + ". Sides: " + triangle.getaSide() + " cm, "
+                            + triangle.getbSide() + " cm, "
+                            + triangle.getcSide() + " cm.");
             i++;
         }
     }
 
     /**
      * Checks if answer is positive or negative.
+     *
      * @param answer - user's answer
      * @return boolean value(true or false)
      */
